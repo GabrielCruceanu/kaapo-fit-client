@@ -1,64 +1,156 @@
-
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+  >
     <a href="https://flowbite.com/" class="flex items-center">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+      <img
+        src="https://flowbite.com/docs/images/logo.svg"
+        class="h-8 mr-3"
+        alt="Flowbite Logo"
+      />
+      <span
+        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+        >Flowbite</span
+      >
     </a>
     <div class="flex items-center md:order-2">
-      <div class="flex items-center md:order-3 ml-3" (click)="darkMode.set(!darkMode())">
-        <button type="button" class="flex text-sm text-white p-2 bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
-          {{darkMode() ? "Dark" : "Light"}}
+      <div
+        class="flex items-center md:order-3 ml-3"
+        (click)="darkMode.set(!darkMode())"
+      >
+        <button
+          type="button"
+          class="flex text-sm text-white p-2 bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+        >
+          {{ darkMode() ? "Dark" : "Light" }}
         </button>
       </div>
-      <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+      <button
+        type="button"
+        class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+        id="user-menu-button"
+        aria-expanded="false"
+        data-dropdown-toggle="user-dropdown"
+        data-dropdown-placement="bottom"
+      >
         <span class="sr-only">Open user menu</span>
-        <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="user photo">
+        <img
+          class="w-8 h-8 rounded-full"
+          src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+          alt="user photo"
+        />
       </button>
       <!-- Dropdown menu -->
-      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+      <div
+        class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+        id="user-dropdown"
+      >
         <div class="px-4 py-3">
-          <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-          <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+          <span class="block text-sm text-gray-900 dark:text-white"
+            >Bonnie Green</span
+          >
+          <span class="block text-sm text-gray-500 truncate dark:text-gray-400"
+            >name@flowbite.com</span
+          >
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Dashboard</a
+            >
           </li>
           <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Settings</a
+            >
           </li>
           <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Earnings</a
+            >
           </li>
           <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Sign out</a
+            >
           </li>
         </ul>
       </div>
-      <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+      <button
+        data-collapse-toggle="navbar-user"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-user"
+        aria-expanded="false"
+      >
         <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
         </svg>
       </button>
     </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+    <div
+      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      id="navbar-user"
+    >
+      <ul
+        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+      >
         <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+          <a
+            href="#"
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+            aria-current="page"
+            >Home</a
+          >
         </li>
         <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          <a
+            href="#"
+            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            >About</a
+          >
         </li>
         <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+          <a
+            href="#"
+            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            >Services</a
+          >
         </li>
         <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
+          <a
+            href="#"
+            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            >Pricing</a
+          >
         </li>
         <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          <a
+            href="#"
+            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            >Contact</a
+          >
         </li>
       </ul>
     </div>
@@ -67,18 +159,28 @@
 <section class="bg-white dark:bg-gray-900">
   <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+      <h2
+        class="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white"
+      >
         Fundraising events
       </h2>
-      <p class="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
-        Flowbite helps you connect with friends, family and communities of people who share your interests.
+      <p
+        class="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl"
+      >
+        Flowbite helps you connect with friends, family and communities of
+        people who share your interests.
       </p>
     </div>
 
     <div class="grid grid-cols-1 gap-4 mt-8 xl:gap-12 md:grid-cols-2">
       <div
-        class="p-5 space-y-4 bg-white border border-gray-200 rounded-lg shadow-md lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <img class="object-cover w-full rounded-lg shadow-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/fundraising-1.png" alt="">
+        class="p-5 space-y-4 bg-white border border-gray-200 rounded-lg shadow-md lg:p-8 dark:bg-gray-800 dark:border-gray-700"
+      >
+        <img
+          class="object-cover w-full rounded-lg shadow-lg"
+          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/fundraising-1.png"
+          alt=""
+        />
 
         <div>
           <div class="flex items-center justify-between gap-6">
@@ -86,42 +188,67 @@
               <span class="text-lg font-bold text-gray-900 dark:text-white">
                 $376,856
               </span>
-              <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+              <span
+                class="text-sm font-normal text-gray-500 dark:text-gray-400"
+              >
                 of 400k goal
               </span>
             </div>
-            <span class="text-xs font-normal text-right text-gray-500 dark:text-gray-400">
+            <span
+              class="text-xs font-normal text-right text-gray-500 dark:text-gray-400"
+            >
               2,756 donors
             </span>
           </div>
-          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-1">
-            <div class="bg-primary-600 h-2.5 rounded-full" style="width: 85%"></div>
+          <div
+            class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-1"
+          >
+            <div
+              class="bg-primary-600 h-2.5 rounded-full"
+              style="width: 85%"
+            ></div>
           </div>
         </div>
 
-        <h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">
+        <h3
+          class="text-lg font-bold leading-tight text-gray-900 dark:text-white"
+        >
           Thank you for supporting in planting trees work.
         </h3>
         <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-          Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales
-          to stand-up
-          comedy and streaming marathons. There is something for everyone.
+          Our fundraisers are a creative bunch when it comes to taking on
+          challenges, from beard shaves and bake sales to stand-up comedy and
+          streaming marathons. There is something for everyone.
         </p>
 
-        <div class="flex flex-col gap-4 sm:flex-row md:flex-col lg:flex-row lg:items-center">
-          <a href="#" title=""
-             class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-             role="button">
+        <div
+          class="flex flex-col gap-4 sm:flex-row md:flex-col lg:flex-row lg:items-center"
+        >
+          <a
+            href="#"
+            title=""
+            class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            role="button"
+          >
             Donate now
           </a>
 
-          <a href="#" title=""
-             class="px-5 py-2.5 text-sm justify-center font-medium text-gray-900 inline-flex items-center focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-             role="button">
-            <svg aria-hidden="true" class="w-5 h-5 mr-2 -ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                 fill="currentColor">
+          <a
+            href="#"
+            title=""
+            class="px-5 py-2.5 text-sm justify-center font-medium text-gray-900 inline-flex items-center focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            role="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 mr-2 -ml-1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
               <path
-                d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"
+              />
             </svg>
             Share this Fundraiser
           </a>
@@ -129,8 +256,13 @@
       </div>
 
       <div
-        class="p-5 space-y-4 bg-white border border-gray-200 rounded-lg shadow-md lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <img class="object-cover w-full rounded-lg shadow-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/fundraising-2.png" alt="">
+        class="p-5 space-y-4 bg-white border border-gray-200 rounded-lg shadow-md lg:p-8 dark:bg-gray-800 dark:border-gray-700"
+      >
+        <img
+          class="object-cover w-full rounded-lg shadow-lg"
+          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/fundraising-2.png"
+          alt=""
+        />
 
         <div>
           <div class="flex items-center justify-between gap-6">
@@ -138,42 +270,67 @@
               <span class="text-lg font-bold text-gray-900 dark:text-white">
                 $75,856
               </span>
-              <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+              <span
+                class="text-sm font-normal text-gray-500 dark:text-gray-400"
+              >
                 of 150k goal
               </span>
             </div>
-            <span class="text-xs font-normal text-right text-gray-500 dark:text-gray-400">
+            <span
+              class="text-xs font-normal text-right text-gray-500 dark:text-gray-400"
+            >
               568 donors
             </span>
           </div>
-          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-1">
-            <div class="bg-primary-600 h-2.5 rounded-full" style="width: 50%"></div>
+          <div
+            class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-1"
+          >
+            <div
+              class="bg-primary-600 h-2.5 rounded-full"
+              style="width: 50%"
+            ></div>
           </div>
         </div>
 
-        <h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">
+        <h3
+          class="text-lg font-bold leading-tight text-gray-900 dark:text-white"
+        >
           Thank you for supporting our lifesaving work.
         </h3>
         <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-          Our fundraisers are a creative bunch when it comes to taking on challenges, from beard shaves and bake sales
-          to stand-up
-          comedy and streaming marathons. There is something for everyone.
+          Our fundraisers are a creative bunch when it comes to taking on
+          challenges, from beard shaves and bake sales to stand-up comedy and
+          streaming marathons. There is something for everyone.
         </p>
 
-        <div class="flex flex-col gap-4 sm:flex-row md:flex-col lg:flex-row lg:items-center">
-          <a href="#" title=""
-             class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-             role="button">
+        <div
+          class="flex flex-col gap-4 sm:flex-row md:flex-col lg:flex-row lg:items-center"
+        >
+          <a
+            href="#"
+            title=""
+            class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            role="button"
+          >
             Donate now
           </a>
 
-          <a href="#" title=""
-             class="px-5 py-2.5 text-sm justify-center font-medium text-gray-900 inline-flex items-center focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-             role="button">
-            <svg aria-hidden="true" class="w-5 h-5 mr-2 -ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                 fill="currentColor">
+          <a
+            href="#"
+            title=""
+            class="px-5 py-2.5 text-sm justify-center font-medium text-gray-900 inline-flex items-center focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            role="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 mr-2 -ml-1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
               <path
-                d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"
+              />
             </svg>
             Share this Fundraiser
           </a>
@@ -182,14 +339,24 @@
     </div>
 
     <div class="mt-8 text-center">
-      <a href="#" title=""
-         class="inline-flex items-center text-lg font-medium text-primary-600 hover:underline dark:text-primary-500">
+      <a
+        href="#"
+        title=""
+        class="inline-flex items-center text-lg font-medium text-primary-600 hover:underline dark:text-primary-500"
+      >
         View all fundraising events
-        <svg aria-hidden="true" class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-             fill="currentColor">
-          <path fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd" />
+        <svg
+          aria-hidden="true"
+          class="w-5 h-5 ml-2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          />
         </svg>
       </a>
     </div>
