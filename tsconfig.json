@@ -22,7 +22,27 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "#/app/*": [
+        "./src/app/*" // The short path to components
+      ],
+      "#/assets/*": [
+        "./src/assets/*" // The short path to constants
+      ],
+      "#/content/*": [
+        "./src/content/*" // The short path to utils
+      ],
+      "#/data/*": [
+        "./src/data/*" // The short path to styles
+      ],
+      "#/environments/*": [
+        "./src/environments/*" // The short path to themes
+      ],
+      "#/styles/*": [
+        "./src/styles/*" // The short path to lib
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

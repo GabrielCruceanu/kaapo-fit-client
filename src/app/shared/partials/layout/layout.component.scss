@@ -1,0 +1,72 @@
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.app-wrap {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.app-header {
+  height: 100%;
+  min-height: 57px;
+  max-height: 57px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+
+  &.isAuth {
+    height: 100vh;
+  }
+}
+
+.app-tabs {
+  height: 100%;
+  width: 100%;
+  max-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  app-tabs {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    height: calc(100vh - 177px);
+    width: 100%;
+    &.isAuth {
+      height: calc(100vh - 177px);
+    }
+  }
+
+  .app-tabs {
+    min-height: 120px;
+    max-height: 120px;
+  }
+
+  .app-wrap {
+    padding-bottom: 0;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}

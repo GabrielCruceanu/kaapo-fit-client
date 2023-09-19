@@ -1,0 +1,67 @@
+<app-loading-spinner *ngIf="showLoading$ | async"></app-loading-spinner>
+<section class="bg-white dark:bg-gray-900">
+  <div class="grid min-h-screen lg:grid-cols-2">
+    <div class="flex items-center justify-center px-4 py-6 lg:py-0 sm:px-0">
+      <div class="w-full max-w-md xl:max-w-xl">
+        <ng-content #formZone></ng-content>
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center px-4 py-6 bg-teal-600 lg:py-0 sm:px-0"
+    >
+      <div class="max-w-md xl:max-w-xl">
+        <a
+          routerLink="/"
+          class="flex items-center mb-4 text-2xl font-semibold text-white"
+        >
+          <img
+            class="w-8 h-8 mr-2"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+            alt="logo"
+          />
+          Kaapo.Fit
+        </a>
+        <h1
+          class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white xl:text-5xl"
+        >
+          Explore the world’s leading design portfolios.
+        </h1>
+        <p class="mb-4 font-light text-teal-200 lg:mb-8">
+          Millions of designers and agencies around the world showcase their
+          portfolio work on Flowbite - the home to the world’s best design and
+          creative professionals.
+        </p>
+        <div class="flex items-center divide-x divide-teal-500">
+          <div class="flex pr-3 -space-x-4 sm:pr-5">
+            <img
+              class="w-10 h-10 border-2 border-white rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+              alt="bonnie avatar"
+            />
+            <img
+              class="w-10 h-10 border-2 border-white rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+              alt="jese avatar"
+            />
+            <img
+              class="w-10 h-10 border-2 border-white rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+              alt="roberta avatar"
+            />
+            <img
+              class="w-10 h-10 border-2 border-white rounded-full"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/thomas-lean.png"
+              alt="thomas avatar"
+            />
+          </div>
+          <a href="#" class="pl-3 text-white sm:pl-5 dark:text-white">
+            <span class="text-sm text-teal-200"
+              >Over <span class="font-medium text-white">15.7k</span> Happy
+              Customers</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -13,13 +13,13 @@ import { WindowRefService } from './shared/service/window-ref.service';
 import { DarkModeService } from './shared/service/dark-mode.service';
 import { SwUpdate } from '@angular/service-worker';
 import { interval } from 'rxjs';
+import { AppState } from '#/app/store/app.state';
+import { Store } from '@ngrx/store';
+import { autoLogin } from '#/app/features/auth/store/auth.actions';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <app-navbar></app-navbar>
-    <router-outlet></router-outlet>
-  `,
+  template: ` <router-outlet></router-outlet> `,
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
     private darkModeService: DarkModeService,
     private update: SwUpdate,
     private appRef: ApplicationRef,
+    private store: Store<AppState>,
   ) {
     if (isPlatformBrowser(this.platformId)) {
       this.darkModeService.getModeFromLocalStorage();
@@ -51,6 +52,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
+      this.store.dispatch(autoLogin());
       initFlowbite();
     }
   }

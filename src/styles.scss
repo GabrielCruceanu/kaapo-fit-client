@@ -1,5 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
-
+@import "styles/variables";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*
+  ===============
+  Global Styles
+  ===============
+  */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif !important;
+  background: var(--dark-one);
+  color: var(--white);
+  line-height: 1.5;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: var(--spacing);
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 43px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 30px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 1.35rem;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 1.25rem;
+  line-height: 25px;
+}
+
+h6 {
+  font-size: 1.063rem;
+  line-height: 22px;
+}
+
+p {
+  margin-bottom: 0.938rem;
+  line-height: 18px;
+}
