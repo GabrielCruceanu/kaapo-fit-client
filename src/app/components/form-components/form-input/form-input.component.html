@@ -1,0 +1,30 @@
+<div class="w-full">
+  <label
+    [for]="name"
+    [ngClass]="{
+      'text-red-700 dark:text-red-500': isErrorMessageShown,
+      'text-green-700 dark:text-green-500': success
+    }"
+    class="block mb-2 text-sm font-medium"
+  >
+    {{ label }}
+  </label>
+  <input
+    [autocomplete]="label"
+    [formControl]="control"
+    [id]="name"
+    [name]="name"
+    [placeholder]="placeholder"
+    [type]="type"
+    class="w-full"
+  />
+  <p
+    *ngIf="isErrorMessageShown"
+    class="mt-2 text-sm text-red-600 dark:text-red-500"
+  >
+    <span>{{ errorMessage }}</span>
+  </p>
+  <p *ngIf="success" class="mt-2 text-sm bg-primary">
+    {{ success }}
+  </p>
+</div>

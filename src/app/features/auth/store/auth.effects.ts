@@ -124,10 +124,12 @@ export class AuthEffects {
       ofType(autoLogin),
       mergeMap(() => {
         return this.authService.loginWithRefreshToken().pipe(
-          map((user) => {
-            console.log('user: ' + user);
-            if (user) {
-              return loginSuccess({ userAuth: user, redirect: false });
+          map((response) => {
+            console.log('user: ' + response);
+
+            if (response) {
+              this.authService.setTokens(response);
+              return loginSuccess({ userAuth: response, redirect: false });
             } else {
               return autoLogout();
             }

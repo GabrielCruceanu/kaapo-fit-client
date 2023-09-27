@@ -2,7 +2,7 @@ import { EnvironmentMap } from '#/environments/environmentMap';
 
 export const environment: EnvironmentMap = {
   production: true,
-  api: 'https://kaapo.fit/api',
+  apiUrl: 'https://kaapo.fit/api',
   socket: 'https://kaapo.fit',
   appsProviders: {
     facebook: '535472397651204',

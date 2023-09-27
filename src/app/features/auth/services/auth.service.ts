@@ -12,7 +12,7 @@ import { AuthTokenInterceptor } from '#/app/features/auth/interceptor/auth-token
   providedIn: 'root',
 })
 export class AuthService {
-  private readonly BASE_URL = environment.api;
+  private readonly BASE_URL = environment.apiUrl;
 
   constructor(
     private httpClient: HttpClient,

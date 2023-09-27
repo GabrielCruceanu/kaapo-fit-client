@@ -1,6 +1,6 @@
 export interface EnvironmentMap {
   production: boolean;
-  api: string;
+  apiUrl: string;
   socket: string;
   appsProviders: AppsProviders;
 }

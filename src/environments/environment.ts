@@ -2,7 +2,7 @@ import { EnvironmentMap } from '#/environments/environmentMap';
 
 export const environment: EnvironmentMap = {
   production: false,
-  api: 'http://localhost:3000/api/v1',
+  apiUrl: 'http://localhost:3000/api/v1',
   socket: 'http://localhost:4200',
   appsProviders: {
     facebook: '535472397651204',

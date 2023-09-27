@@ -1,0 +1,38 @@
+<section>
+  <div class="max-w-2xl mx-auto">
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <FormInput
+        [control]="form.controls['email']"
+        label="Email"
+        name="email"
+        placeholder="jhon@mail.ro"
+      ></FormInput>
+      <FormInput
+        [control]="form.controls['password']"
+        label="Password"
+        name="password"
+        placeholder="***********"
+        type="password"
+      ></FormInput>
+      <button class="w-full bg-teal-500 mt-3">Login</button>
+    </form>
+    <div *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <button
+      (click)="loginAsAdmin()"
+      *ngIf="typeOfLogin === ApiRoutes.Login"
+      class="w-full bg-red-500 mt-3"
+    >
+      Login as admin
+    </button>
+    <button
+      (click)="loginAsClient()"
+      *ngIf="typeOfLogin === ApiRoutes.AdminLogin"
+      class="w-full bg-blue-500 mt-3"
+    >
+      Login as client
+    </button>
+  </div>
+</section>

@@ -52,6 +52,6 @@ export class ErrorDialogInterceptor implements HttpInterceptor {
   }
 
   handleError(err: HttpError) {
-    alert(err.message);
+    console.log(err.message);
   }
 }

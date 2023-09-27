@@ -8,6 +8,67 @@
   ===============
   */
 
+@layer base {
+  :root {
+    --gradient: #00b39a;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 182 100% 35%;
+    --primary-foreground: 182 10% 96.75%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 169 100% 48%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.3rem;
+  }
+
+  .dark {
+    --gradient: #00b39a;
+
+    --background: 169 65% 3.84%;
+    --foreground: 169 10% 97.4%;
+
+    --muted: 169 50% 14.399999999999999%;
+    --muted-foreground: 169 10% 54.8%;
+
+    --popover: 169 45% 6.24%;
+    --popover-foreground: 169 10% 97.4%;
+
+    --card: 169 45% 6.24%;
+    --card-foreground: 169 10% 97.4%;
+
+    --border: 169 50% 14.399999999999999%;
+    --input: 169 50% 14.399999999999999%;
+
+    --primary: 182 100% 35%;
+    --primary-foreground: 182 10% 96.75%;
+
+    --secondary: 169 50% 14.399999999999999%;
+    --secondary-foreground: 169 10% 97.4%;
+
+    --accent: 169 50% 14.399999999999999%;
+    --accent-foreground: 169 10% 97.4%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 169 10% 97.4%;
+
+    --ring: 169 100% 48%;
+
+    --radius: 0.3rem;
+  }
+}
+
 *,
 ::after,
 ::before {
@@ -17,8 +78,8 @@
 }
 body {
   font-family: "Inter", sans-serif !important;
-  background: var(--dark-one);
-  color: var(--white);
+  //background: var(--dark-one);
+  //color: var(--white);
   line-height: 1.5;
   font-size: 16px;
   margin: 0;

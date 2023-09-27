@@ -1,4 +1,4 @@
-import { NgModule, isDevMode, APP_INITIALIZER } from '@angular/core';
+import { APP_INITIALIZER, isDevMode, NgModule } from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
@@ -24,7 +24,8 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AuthService } from '#/app/features/auth/services/auth.service';
 import { AuthTokenInterceptor } from '#/app/features/auth/interceptor/auth-token.interceptor';
 import { ErrorDialogInterceptor } from '#/app/core/interceptor/error-dialog.interceptor';
-import { mergeMap } from 'rxjs/operators';
+import { AuthModule } from '#/app/modules/auth/auth.module';
+
 const initialize = (authService: AuthService) => async () => {
   if (authService.getAccessToken()) {
     try {
@@ -54,6 +55,7 @@ const initialize = (authService: AuthService) => async () => {
       serializer: CustomSerializer,
     }),
     BrowserAnimationsModule,
+    AuthModule,
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },

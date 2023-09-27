@@ -1,0 +1,56 @@
+<footer
+  class="mt-1 w-full border-t border-primary text-black dark:text-white px-4 py-11 antialiased bg-white dark:bg-gray-900"
+>
+  <div class="container mx-auto flex flex-col lg:flex-row">
+    <div class="mb-5 w-full lg:mb-0">
+      <h3
+        [innerHTML]="footerContent.about.title"
+        class="mb-2 text-2xl font-semibold"
+      ></h3>
+      <p [innerHTML]="footerContent.about.description" class="text-sm"></p>
+    </div>
+    <div class="mb-5 w-full lg:mb-0">
+      <h3
+        [innerHTML]="footerContent.contact.title"
+        class="mb-2 text-2xl font-semibold lg:text-center"
+      ></h3>
+      <ul class="flex lg:justify-center">
+        <li
+          *ngFor="let socialLink of socialLinks"
+          class="border-1 d-flex w-fit border-r px-3 last:border-0"
+        >
+          <div
+            class="h-8 space-x-2.5 fill-primary hover:fill-primary/90 transition-all"
+          >
+            <app-link
+              [href]="socialLink.to"
+              [name]="socialLink.name"
+              [target]="'_blank'"
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mb-5 w-full lg:mb-0">
+      <h3
+        [innerHTML]="footerContent.other.title"
+        class="mb-2 text-2xl font-semibold lg:text-right"
+      ></h3>
+      <ul class="flex flex-col text-sm md:flex-row lg:justify-end">
+        <li *ngFor="let termLink of termsLinks" class="md:px-2 last:pr-0">
+          <app-link
+            [href]="termLink.to"
+            [name]="termLink.name"
+            [target]="'_blank'"
+          />
+        </li>
+      </ul>
+
+      <p
+        [innerHTML]="footerContent.other.description"
+        class="mt-2 text-sm lg:text-right"
+      ></p>
+    </div>
+  </div>
+</footer>
