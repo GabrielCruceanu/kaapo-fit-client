@@ -1,0 +1,23 @@
+<button
+  [ngClass]="{
+    'bg-primary text-primary-foreground shadow hover:bg-primary/90':
+      variants === ButtonVariants.Default,
+    'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90':
+      variants === ButtonVariants.Destructive,
+    'border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground':
+      variants === ButtonVariants.Outline,
+    'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80':
+      variants === ButtonVariants.Secondary,
+    'hover:bg-accent hover:text-accent-foreground':
+      variants === ButtonVariants.Ghost,
+    'text-primary underline-offset-4 hover:underline':
+      variants === ButtonVariants.Link,
+    'h-9 px-4 py-2': size === ButtonSizes.Default,
+    'h-8 rounded-md px-3 text-xs': size === ButtonSizes.Small,
+    'h-10 rounded-md px-8': size === ButtonSizes.Large,
+    'h-9 w-9': size === ButtonSizes.Icon
+  }"
+  class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+>
+  <ng-content></ng-content>
+</button>

@@ -2,16 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { UserInterface } from '#/app/ts/interface';
-import { ApiRoutes } from '#/app/ts/enum';
+import { ApiRoutes, ButtonSizes, ButtonVariants } from '#/app/ts/enum';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { ButtonComponent } from '#/app/components/button/button.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet, ButtonComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  buttonSizes = ButtonSizes;
+  buttonVariants = ButtonVariants;
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

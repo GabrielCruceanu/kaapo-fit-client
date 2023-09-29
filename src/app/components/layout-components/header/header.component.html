@@ -1,141 +1,274 @@
-<header>
-  <nav class="bg-white border-gray-200 dark:bg-gray-900">
+<header class="border-b border-primary">
+  <nav class="bg-background px-4 lg:px-6 py-2.5">
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
     >
-      <a class="flex items-center" href="https://flowbite.com/">
-        <img
-          alt="KaapoFit Logo"
-          class="h-8 mr-3"
-          src="https://flowbite.com/docs/images/logo.svg"
-        />
+      <a class="flex items-center" href="https://flowbite.com">
+        <!--        <img-->
+        <!--          alt="TrainTap Logo"-->
+        <!--          class="mr-3 h-6 sm:h-9"-->
+        <!--          src="https://flowbite.com/docs/images/logo.svg"-->
+        <!--        />-->
         <span
-          class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+          class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
           >TrainTap</span
         >
       </a>
-      <div class="flex items-center md:order-2">
-        <div
+      <div class="flex items-center lg:order-2">
+        <button
           (click)="setDarkMode(!darkMode())"
-          class="flex items-center md:order-3 ml-3 mr-3"
+          class="inline-flex items-center p-2 mr-1 text-sm font-medium text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+          data-tooltip-target="tooltip-dark"
+          type="button"
         >
-          <button
-            class="flex text-sm focus:ring-gray-600 text-black bg-white dark:text-white p-2 dark:bg-gray-800 rounded-full md:mr-0 focus:ring-4 dark:focus:ring-gray-300"
-            type="button"
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            {{ darkMode() ? "Dark" : "Light" }}
-          </button>
+            <path
+              *ngIf="!darkMode()"
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+            <path
+              *ngIf="darkMode()"
+              d="M10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-11a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1Zm0 12a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1ZM4.343 5.757a1 1 0 0 0 1.414-1.414L4.343 2.929a1 1 0 0 0-1.414 1.414l1.414 1.414Zm11.314 8.486a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM4 10a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1Zm15-1h-2a1 1 0 1 0 0 2h2a1 1 0 0 0 0-2ZM4.343 14.243l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414a1 1 0 0 0-1.414-1.414ZM14.95 6.05a1 1 0 0 0 .707-.293l1.414-1.414a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 .707 1.707Z"
+            ></path>
+          </svg>
+        </button>
+        <div
+          class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+          id="tooltip-dark"
+          role="tooltip"
+        >
+          Toggle dark mode
+          <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <button
+          class="hidden items-center p-2 text-sm font-medium text-gray-500 rounded-lg lg:inline-flex dark:text-gray-400 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+          data-tooltip-target="tooltip-statistics"
+          type="button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+            ></path>
+          </svg>
+        </button>
+        <div
+          *ngIf="isAuthenticated"
+          class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+          id="tooltip-statistics"
+          role="tooltip"
+        >
+          View analytics
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <button
+          *ngIf="isAuthenticated"
           aria-expanded="false"
-          class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-          data-dropdown-placement="bottom"
-          data-dropdown-toggle="user-dropdown"
+          class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+          data-dropdown-toggle="dropdown"
           id="user-menu-button"
           type="button"
         >
           <span class="sr-only">Open user menu</span>
           <img
-            *ngIf="isAuthenticated"
             alt="user photo"
             class="w-8 h-8 rounded-full"
-            src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
           />
         </button>
         <!-- Dropdown menu -->
         <div
-          class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
-          id="user-dropdown"
+          class="hidden z-50 my-4 w-56 text-base list-none bg-background rounded divide-y divide-accent shadow"
+          id="dropdown"
         >
-          <div class="px-4 py-3">
+          <div class="py-3 px-4">
             <span
               *ngIf="userName"
-              class="block text-sm text-gray-900 dark:text-white"
+              class="block text-sm font-semibold text-gray-900 dark:text-white"
               >{{ userName }}</span
             >
             <span
               *ngIf="userEmail"
-              class="block text-sm text-gray-500 truncate dark:text-gray-400"
+              class="block text-sm font-light text-gray-500 truncate dark:text-gray-400"
               >{{ userEmail }}</span
             >
           </div>
-          <ul aria-labelledby="user-menu-button" class="py-2">
-            <li
-              *ngFor="let link of links"
-              [routerLinkActiveOptions]="{ exact: true }"
-              routerLinkActive="text-primary "
-            >
+          <ul
+            aria-labelledby="dropdown"
+            class="py-1 font-light text-gray-500 dark:text-gray-400"
+          >
+            <li>
               <a
-                [routerLink]="link.to"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >{{ link.text }}
+                class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                href="#"
+                >My profile</a
+              >
+            </li>
+            <li>
+              <a
+                class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                href="#"
+                >Account settings</a
+              >
+            </li>
+          </ul>
+          <ul
+            aria-labelledby="dropdown"
+            class="py-1 font-light text-gray-500 dark:text-gray-400"
+          >
+            <li>
+              <a
+                class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                href="#"
+              >
+                <svg
+                  class="mr-2 w-5 h-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+                My likes</a
+              >
+            </li>
+            <li>
+              <a
+                class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                href="#"
+              >
+                <svg
+                  class="mr-2 w-5 h-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"
+                  ></path>
+                </svg>
+                Collections</a
+              >
+            </li>
+            <li>
+              <a
+                class="flex justify-between items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                href="#"
+              >
+                <span class="flex items-center">
+                  <svg
+                    class="mr-2 w-5 h-5 text-primary-600 dark:text-primary-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  Pro version
+                </span>
+                <svg
+                  class="w-5 h-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
               </a>
+            </li>
+          </ul>
+          <ul
+            aria-labelledby="dropdown"
+            class="py-1 font-light text-gray-500 dark:text-gray-400"
+          >
+            <li>
+              <button
+                (click)="logout()"
+                class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Sign out
+              </button>
             </li>
           </ul>
         </div>
         <button
-          aria-controls="navbar-user"
+          aria-controls="mobile-menu"
           aria-expanded="false"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          data-collapse-toggle="navbar-user"
+          class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          data-collapse-toggle="mobile-menu"
           type="button"
         >
           <span class="sr-only">Open main menu</span>
           <svg
-            aria-hidden="true"
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 17 14"
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M1 1h15M1 7h15M1 13h15"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
+              clip-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            class="hidden w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              fill-rule="evenodd"
+            ></path>
           </svg>
         </button>
       </div>
       <div
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-        id="navbar-user"
+        class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+        id="mobile-menu"
       >
         <ul
-          aria-labelledby="user-menu-button"
-          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
         >
-          <li *ngFor="let link of links">
-            <a
-              [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="link.to"
-              aria-current="page"
-              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-700 md:p-0 dark:text-white md:dark:hover:text-teal-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              data-collapse-toggle="navbar-user"
-              routerLinkActive="text-primary"
-            >
-              {{ link.text }}
-            </a>
+          <li
+            *ngFor="let link of links"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="link.to"
+            class="block cursor-pointer py-2 pr-4 pl-3 text-foreground border-b border-gray-100 hover:bg-background hover:text-primary lg:selection:bg-transparent lg:hover:bg-transparent lg:border-0 lg:p-0 last:border-b-0"
+            routerLinkActive="text-primary"
+          >
+            <a aria-current="page">{{ link.text }}</a>
           </li>
-          <li class="border-t border-t-gray-300 md:border-t-0">
-            <button
-              (click)="logout()"
-              *ngIf="isAuthenticated"
-              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-700 md:p-0 dark:text-white md:dark:hover:text-teal-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-            >
-              Logout
-            </button>
-            <a
-              *ngIf="!isAuthenticated"
-              [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="authLink.to"
-              aria-current="page"
-              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-700 md:p-0 dark:text-white md:dark:hover:text-teal-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              routerLinkActive="text-primary"
-            >
-              {{ authLink.text }}
-            </a>
+          <li
+            *ngIf="!isAuthenticated"
+            [routerLink]="authLink.to"
+            class="block cursor-pointer py-2 pr-4 pl-3 text-foreground border-b border-gray-100 hover:bg-background hover:text-primary lg:hover:bg-transparent lg:border-0 lg:p-0 last:border-b-0"
+            routerLinkActive="text-primary"
+          >
+            <a aria-current="page">{{ authLink.text }}</a>
           </li>
         </ul>
       </div>

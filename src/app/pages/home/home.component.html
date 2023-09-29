@@ -1,1 +1,10 @@
-<p>home works!</p>
+<section class="max-w-screen-xl mx-auto">
+  <p>home works!</p>
+  <app-button routerLink="/login">Default Button</app-button>
+  <app-button [variants]="buttonVariants.Destructive">
+    Destructive Button
+  </app-button>
+  <app-button [variants]="buttonVariants.Ghost"> Ghost Button</app-button>
+  <app-button [variants]="buttonVariants.Outline"> Outline Button</app-button>
+  <app-button [variants]="buttonVariants.Link"> Link Button</app-button>
+</section>
